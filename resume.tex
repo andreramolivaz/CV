@@ -1,0 +1,192 @@
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\hypersetup{breaklinks=true,%
+pagecolor=white,%
+colorlinks=true,%
+linkcolor=cyan,%
+urlcolor=MyDarkBlue}
+
+\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{1em}
+\newlength{\secsep}
+\setlength{\secsep}{0.1cm}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+\definecolor{contactgray}{gray}{0.3}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-6pt} \hrulefill \\ \vspace*{-15pt}}
+\newcommand{\name}[1]{\begin{center}\textsc{\Huge#1}\\\end{center}}
+\newcommand{\program}[1]{\begin{center}\textsc{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\small#1}\end{center}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{\tabin}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.2em}}
+
+\newenvironment{resume_header}{}{\vspace{0pt}}
+
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  \textsc{\large#1}
+  \lineunder
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{resume_subsection}[2][]{
+  \textbf{#2} \hfill {\footnotesize #1} \hspace{2em}
+  \begin{tabbedsection}{0.5\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+\newenvironment{resume_employer}[4]{
+  \vspace{\secsep}
+  \textbf{#1} \\ 
+  \indent {\small #2} \hfill {\footnotesize#3 (#4)}
+  \begin{tabbedsection}{0pt}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Start Document     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{resume_header}
+\name{André Ramolivaz}
+\program{Data Science Major}
+\contact{\href{mailto:andreramolivaz@gmail.com}{ \faEnvelope} \hspace{2cm} \href{tel:393423779629}{\faPhone} \hspace{2cm}\href{https://github.com/andreramolivaz}{\faGithub}     \hspace{2cm} \href{https://www.linkedin.com/in/andreramolivaz} {\faLinkedin}   \hspace{2cm} \href{https://andreramolivaz.github.io}{\faInternetExplorer}}
+\end{resume_header}
+
+
+
+
+
+\begin{resume_section}{About Me}
+  \begin{nospacetabbing}
+
+  \textbf{Technical Skills}  \= R, Phyton, C/C++, Java, Excel, SQL, PHP, HTML, Dart, XML, JSON \LaTeX\\*
+  \textbf{Languages} \> Fluent in French and Italian; Proficient in English\\*
+  \textbf{Interests} \> Trading, Programming Arduino, International affairs, Finance\\*
+  \end{nospacetabbing}
+
+\end{resume_section}
+
+\begin{resume_section}{Work Experience}
+  \begin{resume_employer}{Internship at ARPA}{Agency for environment protection and monitoring}{Valle d'Aosta, IT}{09/2020 - 12/2020}
+    \item \href{https://www.snpambiente.it/2020/11/11/la-scienza-vola-in-una-scatola-di-biscotti/}{Developed a prototype} (with Arduino) on a drone able to track environmental parameters (e.g. pm10, pm2.5 pm1, temperature and humidity). Installed and programmed sensors system (Dht11, Pms5003, Hc-05 ) to collect data and send them via Bluetooth to the phone app for trends identification and possible climate
+implications.
+    \item \href{https://www.arpa.vda.it/it/archivio-news/3500-creativit\%5Cunhbox\%20\%5Cvoidb@x\%20\%5Cbgroup\%20\%5Clet\%20\%5Cunhbox\%20\%5Cvoidb@x\%20\%5Csetbox\%20\%5C@tempboxa\%20\%5Chbox\%20\%7Ba\%5Cglobal\%20\%5Cmathchardef\%20\%5Caccent@spacefactor\%20\%5Cspacefactor\%20\%7D\%5Clet\%20\%5Cbegingroup\%20\%5Cendgroup\%20\%5Crelax\%20\%5Clet\%20\%5Cignorespaces\%20\%5Crelax\%20\%5Caccent\%2018\%20a\%5Cegroup\%20\%5Cspacefactor\%20\%5Caccent@spacefactor\%20-e-ingegno-a-braccetto-con-la-scienxza-citizen-science/}{The team work project} was presented to the \href{https://www.arpa.vda.it/it/archivio-news/3434-riscaldamento-a-legna-tra-cambiamenti-climatici-e-qualit\%5Cunhbox\%20\%5Cvoidb@x\%20\%5Cbgroup\%20\%5Clet\%20\%5Cunhbox\%20\%5Cvoidb@x\%20\%5Csetbox\%20\%5C@tempboxa\%20\%5Chbox\%20\%7Ba\%5Cglobal\%20\%5Cmathchardef\%20\%5Caccent@spacefactor\%20\%5Cspacefactor\%20\%7D\%5Clet\%20\%5Cbegingroup\%20\%5Cendgroup\%20\%5Crelax\%20\%5Clet\%20\%5Cignorespaces\%20\%5Crelax\%20\%5Caccent\%2018\%20a\%5Cegroup\%20\%5Cspacefactor\%20\%5Caccent@spacefactor\%20-dell\%5COT1\%5Ctextquoteright\%20aria-quanto-ne-sappiamo-ne-abbiamo-parlato-con-luca-mercalli}{ BB-CLEAN conference} for the Interreg Alpine Space project
+and to Edutech 2021 as a low cost robotic prototype of eco-sustainability and environmental monitoring.
+
+    
+  \end{resume_employer}
+  
+  \begin{resume_employer}{IT Consultant}{JEVE - Junior Enterprise Ca’ Foscari Venezia}{Venezia, IT}{01/2022 - present}
+    \item Web and app developper (Flutter, WordPress, PHP, HTML, CSS).
+   \item Data analysis consultant for small buisiness services (Phyton, R, Excel) .
+  \end{resume_employer}
+  
+  
+
+  
+  \begin{resume_employer}{Teacher}{Teaching Math and data analysis in high school - Corrado Gex college}{Valle d'Aosta, IT}{09/2020 - 04/2022}
+    \item Support students in project management and in analytical assignment. Contact point on diversification and inclusion for new entrants.
+  
+  \end{resume_employer}
+    
+    \begin{resume_employer}{WSC Ambassador at ONU}{My contribution came from the data analysis and projections on the topics.}{New York, USA}{05/2021 - 03/2022}
+    \item Drafted position papers regarding \textit{“The Disproportionate Impact of Environmental Degradation in Developing States”} and \textit{“The Stigmatization of Victims of HIV/AIDS”} to present at the UN commissions SOCHUM.
+    \item Representation of the Rep. of Nigeria at the CND. Topics discussed are: \textit{“The Emerging Challenges of Synthetic Drug Trafficking”} and \textit{“Incorporating a Human Rights Focus into International Drug Policies”}.
+
+  
+  \end{resume_employer}
+  
+\end{resume_section}
+
+
+\begin{resume_section}{Personal Projects}
+  \begin{resume_subsection}[]{Trading website with alghoritms}
+  \begin{subitems}
+    \item Database creation (SQL) via API (JSON parsification) for trading of financial instruments, with sentiment analysis of the market and users preferences trends. Incorporated the stocks performances with visualization tools.
+    \item Designed the front-end interface (HTML, php, Bootstrap) for the buying/selling simulation, portfolio status visualization and to access the trading predictive alghoritms optionalities (Auto, Standard, Assisted).
+    \item Created ancillaries’ items such as: session, cookies and CSRF tokens.
+    \end{subitems}
+  \end{resume_subsection}
+
+
+  \begin{resume_subsection}[]{Voluntary cooperative foundation “The time bank”}
+  \begin{subitems}
+    \item Website, social page and telegram bot creation to help students find easily teachers.
+    \item  Creation of “Chronos”: token (Waves blockchain) used as currency to exchange and buy
+   
+    \end{subitems}
+  \end{resume_subsection}
+
+
+ \begin{resume_subsection}[]{Investments and Trading}
+ \begin{subitems}
+      \item Ran cross-exchange arbitrage trading strategies via Bayesian statisitcs and sensitivity analysis
+    \end{subitems}
+  \end{resume_subsection}
+
+
+\begin{resume_section}{Education}
+  \begin{resume_subsection}[Venice, IT (2021 - present)]{Bachelor’s degree in Data Science - University of Ca’ Foscari}
+   \begin{subitems}
+      \item Relevant courses: data and web mining, calculus, numerical alghorithms, predictive analysis, linear algebra,  algorithms and data structures, databases, probability and statistics, software engineering.
+     \end{subitems}
+  \end{resume_subsection}
+  
+  
+  \begin{resume_subsection}[Valle d'Aosta, IT (2016 - 2021)]{High school in IT - ISIT Manzetti College}
+    \begin{subitems}
+      \item Final score: 95/100 with thesis merit on ”Big Data Management: the use of business intelligence”
+     \end{subitems}
+  \end{resume_subsection}
+\end{resume_section}
+
+\end{document}
